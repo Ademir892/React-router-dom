@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Expenses from "./routes/Expenses/index.tsx";
 import Invoices from "./routes/Expenses/Invoices/index.tsx";
 import NotFound from "./routes/NotFound/index.tsx";
+import Invoice from "./routes/Expenses/Invoices/Invoice/index.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <BrowserRouter>
@@ -11,9 +12,10 @@ createRoot(document.getElementById("root")!).render(
       <Route path="/" element={<App />}>
         <Route path="expenses" element={<Expenses />} />
         <Route path="invoices" element={<Invoices />} />
+          <Route path=":invoiceId" element={<Invoice />} />
         <Route path="*" element={<NotFound />}
         />
       </Route>
     </Routes>
   </BrowserRouter>
-);
+)
