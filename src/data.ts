@@ -40,3 +40,9 @@ let invoices = [
       (invoice) => invoice.number === number
     );
   }
+
+  export function deleteInvoice(number: any) {
+    invoices = invoices.filter(
+      (invoice) => invoice.number !== number
+    );
+  }
